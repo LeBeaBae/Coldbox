@@ -1,0 +1,11 @@
+{
+	"animeName":"16_mechanic",
+	"percentageMax":"0.2",
+	"totalFrame":"452",
+	"width":"164",
+	"height":"380",
+	"headHeight":"250",
+	"arrayFrame":[
+		{"prop":"0,380,0,0"}
+	]
+}
