@@ -12,49 +12,7 @@
     <link rel="icon" href="Incredibox-logo.png" type="image/x-icon">
 
 </head>
-    
-    <style type="text/css">
-    .mobileShow {
-        display: none;
-    }
-    /* Smartphone Portrait and Landscape */
-    
-    @media only screen and (min-width: 0px) and (max-width: 480px) {
-        .mobileShow {
-            display: inline;
-        }
-    }
-    
-    @media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
-        .mobileShow {
-            display: inline;
-        }
-    }
-</style>
-<style type="text/css">
-    .mobileHide {
-        display: inline;
-    }
-    /* Smartphone Portrait and Landscape */
-    
-    @media only screen and (min-width: 0px) and (max-width: 480px) {
-        .mobileHide {
-            display: none;
-        }
-    }
-    
-    @media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
-        .mobileHide {
-            display: none;
-        }
-    }
-</style>
-<div class="mobileShow" style="color: gray; font-size: 1.5rem; position: absolute; top: 50%;left: 50%; transform:translate(-50%, -50%); text-align: center;">
-    Please view on desktop.
-</div>
-
 <body>
-    <div class="mobileHide">
     <div id='app-incredibox'>
         <div id='content'>
             <div id='page-splash'>
@@ -171,48 +129,111 @@
             </div>
         </div>
         <div class='box-popup with-tab' id='pop-param'>
-            <div class='bac'></div>
-            <div class='flex'>
-                <div class='scale'>
-                    <div class='box'>
-                        <div class='box-tab'>
-                            <div class='tab' id='tab-language'>Language</div>
-                            <div class='tab' id='tab-setting'>Settings</div>
-                        </div>
-                        <div class='pop' id='pop-language'>
-                            <div class='container'>
-                                <div class='box-lang'></div>
+                <div class='bac'></div>
+                <div class='flex'>
+                    <div class='scale'>
+                        <div class='box'>
+                            <div class='box-tab'>
+                                <div class='tab' id='tab-language'>Language</div>
+                                <div class='tab' id='tab-setting'>Settings</div>
                             </div>
-                        </div>
-                        <div class='pop' id='pop-setting'>
-                            <div class='container'>
-                                <div class='paramline' id='param-dark'><span class='label'>Dark mode</span>
-                                    <div class='bt-mini bt-onoff hoverLocked'>
-                                        <div class='slider'></div>
-                                        <div class='ic-locked'><svg class='icn-svg'>
+                            <div class='pop' id='pop-language'>
+                                <div class='container'>
+                                    <div class='box-lang'></div>
+                                </div>
+                            </div>
+                            <div class='pop' id='pop-setting'>
+                                <div class='container'>
+                                    <div class='paramline' id='param-dark'><span class='label'>Dark mode</span>
+                                        <div class='bt-mini bt-onoff hoverLocked'>
+                                            <div class='slider'></div>
+                                            <div class='ic-locked'><svg class='icn-svg'>
                                                     <use xlink:href='#ic-lock'></use>
                                                 </svg></div>
-                                        <div class='hitzone'></div>
+                                            <div class='hitzone'></div>
+                                        </div>
                                     </div>
+                                    <hr>
+                                    <div class='paramline' id='param-safe'><span class='label'>Safe mode (parental
+                                            control)</span> <span class='ic-info'><svg class='icn-svg'>
+                                                <use xlink:href='#ic-help'></use>
+                                            </svg>
+                                            <div class='hitzone'></div>
+                                        </span>
+                                        <div class='bt-mini bt-onoff hoverLocked'>
+                                            <div class='slider'></div>
+                                            <div class='ic-locked'><svg class='icn-svg'>
+                                                    <use xlink:href='#ic-lock'></use>
+                                                </svg></div>
+                                            <div class='hitzone'></div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class='paramline' id='param-reset'><span class='label'>Reset bonuses
+                                            progression</span> <span class='ic-info'><svg class='icn-svg'>
+                                                <use xlink:href='#ic-help'></use>
+                                            </svg>
+                                            <div class='hitzone'></div>
+                                        </span>
+                                        <div class='bt-mini light hoverLocked'>
+                                            <div class='txt'>Reset</div>
+                                            <div class='ic-locked'><svg class='icn-svg'>
+                                                    <use xlink:href='#ic-lock'></use>
+                                                </svg></div>
+                                            <div class='hitzone'></div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class='paramline' id='param-recover'><span class='label'>Recover all
+                                            mixes</span> <span class='ic-info'><svg class='icn-svg'>
+                                                <use xlink:href='#ic-help'></use>
+                                            </svg>
+                                            <div class='hitzone'></div>
+                                        </span>
+                                        <div class='bt-mini light hoverLocked'>
+                                            <div class='txt'>Recover</div>
+                                            <div class='ic-locked'><svg class='icn-svg'>
+                                                    <use xlink:href='#ic-lock'></use>
+                                                </svg></div>
+                                            <div class='hitzone'></div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class='text mini'>Version 0.5.4</div>
                                 </div>
-                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='box-popup' id='pop-popup'>
+                <div class='bac'></div>
+                <div class='flex'>
+                    <div class='scale'>
+                        <div class='box'>
+                            <div class='pop'><span class='icon'><svg class='icn-svg'>
+                                        <use xlink:href='#ic-close'></use>
+                                    </svg></span>
+                                <div class='container'>
+                                    <div class='title'></div>
+                                    <div class='text'></div>
+                                    <div class='content'></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class='box-popup' id='pop-popup'>
+        <div class='box-popup' id='pop-dialog'>
             <div class='bac'></div>
             <div class='flex'>
                 <div class='scale'>
                     <div class='box'>
-                        <div class='pop'><span class='icon'><svg class='icn-svg'>
-                                        <use xlink:href='#ic-close'></use>
-                                    </svg></span>
+                        <div class='pop'>
                             <div class='container'>
-                                <div class='title'></div>
-                                <div class='text'></div>
+                                <div class='title'>TITLE</div>
+                                <div class='text'>Text</div>
                                 <div class='content'></div>
                             </div>
                         </div>
@@ -220,23 +241,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class='box-popup' id='pop-dialog'>
-        <div class='bac'></div>
-        <div class='flex'>
-            <div class='scale'>
-                <div class='box'>
-                    <div class='pop'>
-                        <div class='container'>
-                            <div class='title'>TITLE</div>
-                            <div class='text'>Text</div>
-                            <div class='content'></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     </div>
     <div id='fade-all' class='fadeIn'></div>
     <div id='lock-all'></div>
@@ -716,7 +720,5 @@
             </symbol>
         </defs>
     </svg>
-    </div>
 </body>
-
 </html>
