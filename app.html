@@ -11,52 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
     <link rel="icon" href="Incredibox-logo.png" type="image/x-icon">
 </head>
-    
-    <style type="text/css">
-    .mobileShow {
-        display: none;
-    }
-    /* Smartphone Portrait and Landscape */
-    
-    @media only screen and (min-width: 0px) and (max-width: 480px) {
-        .mobileShow {
-            display: inline;
-        }
-    }
-    
-    @media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
-        .mobileShow {
-            display: inline;
-        }
-    }
-</style>
-<style type="text/css">
-    .mobileHide {
-        display: inline;
-    }
-    /* Smartphone Portrait and Landscape */
-    
-    @media only screen and (min-width: 0px) and (max-width: 480px) {
-        .mobileHide {
-            display: none;
-        }
-    }
-    
-    @media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
-        .mobileHide {
-            display: none;
-        }
-    }
-</style>
-<div class="mobileShow" style="position: absolute; color: gray; font-size: 1.5rem; top: 50%;left: 50%; transform:translate(-50%, -50%)">
-    Please view on desktop.
-</div>
-
 <body class='black'>
-
     <body>
-        <div class="mobileHide">
-        <div id='bck-global'></div>
+     <div id='bck-global'></div>
         <div id='app-incredibox'>
             <div id='content' class='noselect'>
                 <div id='game'>
@@ -140,7 +97,8 @@
                             <div id='box-loader-polo' class='box-loader'></div>
                             <div id='box-picto'></div>
                             <div id='watch-info'>
-                                <div id='info-left'><span class='title'></span><span class='dedi'></span></div>
+                                <div id='info-left'><span class='title'></span> <span class='name'></span> <span
+                                        class='dedi'></span></div>
                                 <div id='info-right'>
                                     <div class='stat'></div><span class='date'></span>
                                 </div>
@@ -149,6 +107,14 @@
                                         <div class='icn-box'><svg class='icn-svg'>
                                                 <use xlink:href='#ic-like'></use>
                                             </svg></div>
+                                    </div>
+                                    <div class='hitzone'></div>
+                                </div>
+                                <div class='bt bt-long' id='bt-save'>
+                                    <div class='bck'><svg class='icn-svg'>
+                                            <use xlink:href='#ic-edit'></use>
+                                        </svg>
+                                        <div class='txt'>SAVE</div>
                                     </div>
                                     <div class='hitzone'></div>
                                 </div>
@@ -190,6 +156,23 @@
                             </svg></div>
                         <div class='hitzone'></div>
                     </div>
+                    <div id='home-bt-list' class='bt bt-haut hoverLocked'>
+                        <div class='bck'><svg class='icn-svg'>
+                                <use xlink:href='#ic-mixlist'></use>
+                            </svg></div>
+                        <div class='txt'>Mixlist</div>
+                        <div class='ic-locked'><svg class='icn-svg'>
+                                <use xlink:href='#ic-lock'></use>
+                            </svg></div>
+                        <div class='hitzone'></div>
+                        <div class='notif'></div>
+                    </div>
+                    <div id='home-bt-album'>
+                        <div class='bck'><svg class='icn-svg'>
+                                <use xlink:href='#ic-mix'></use>
+                            </svg></div>
+                        <div class='hitzone'></div>
+                    </div>
                     <div id='home-bt-info' class='bt'>
                         <div class='bck'><svg class='icn-svg'>
                                 <use xlink:href='#ic-info'></use>
@@ -203,6 +186,164 @@
                         <div class='hitzone'></div>
                     </div>
                     <div id='home-dedicated'></div>
+                </div>
+                <div id='mixlist'>
+                    <div class='bac'></div>
+                    <div class='scale'>
+                        <div id='poplist'>
+                            <div class='tabbox'>
+                                <div class='tab icon' id='tab-latest'>
+                                    <div class='icon'><svg class='icn-svg'>
+                                            <use xlink:href='#ic-live-mini'></use>
+                                        </svg></div>
+                                    <div class='txt'>Latest</div>
+                                </div>
+                                <div class='tab icon' id='tab-top50'>
+                                    <div class='icon'><svg class='icn-svg'>
+                                            <use xlink:href='#ic-trophy-mini'></use>
+                                        </svg></div>
+                                    <div class='txt'>Top 50</div>
+                                </div>
+                                <div class='tab icon' id='tab-search'>
+                                    <div class='icon'><svg class='icn-svg'>
+                                            <use xlink:href='#ic-search-mini'></use>
+                                        </svg></div>
+                                    <div class='txt'>Search</div>
+                                </div>
+                                <div class='tab icon' id='tab-mixlist'>
+                                    <div class='icon'><svg class='icn-svg'>
+                                            <use xlink:href='#ic-mixlist-mini'></use>
+                                        </svg></div>
+                                    <div class='txt'>Mixlist</div>
+                                    <div class='notif'></div>
+                                </div>
+                            </div>
+                            <div class='scrollbox'>
+                                <div class='scroll filter' id='list-mymix'>
+                                    <div class='boxline'></div>
+                                    <div class='boxinfo'></div>
+                                    <div class='spinner-box spin'><svg class='icn-svg col-version'>
+                                            <use xlink:href='#ic-loader'></use>
+                                        </svg></div>
+                                </div>
+                                <div class='scroll filter' id='list-myfav'>
+                                    <div class='boxline'></div>
+                                    <div class='boxinfo'></div>
+                                    <div class='spinner-box spin'><svg class='icn-svg col-version'>
+                                            <use xlink:href='#ic-loader'></use>
+                                        </svg></div>
+                                </div>
+                                <div class='scroll' id='list-latest'>
+                                    <div class='boxline'></div>
+                                    <div class='boxinfo'></div>
+                                    <div class='spinner-box spin'><svg class='icn-svg col-version'>
+                                            <use xlink:href='#ic-loader'></use>
+                                        </svg></div>
+                                </div>
+                                <div class='scroll filter' id='list-day'>
+                                    <div class='boxline'></div>
+                                    <div class='boxinfo'></div>
+                                    <div class='spinner-box spin'><svg class='icn-svg col-version'>
+                                            <use xlink:href='#ic-loader'></use>
+                                        </svg></div>
+                                </div>
+                                <div class='scroll filter' id='list-week'>
+                                    <div class='boxline'></div>
+                                    <div class='boxinfo'></div>
+                                    <div class='spinner-box spin'><svg class='icn-svg col-version'>
+                                            <use xlink:href='#ic-loader'></use>
+                                        </svg></div>
+                                </div>
+                                <div class='scroll filter' id='list-month'>
+                                    <div class='boxline'></div>
+                                    <div class='boxinfo'></div>
+                                    <div class='spinner-box spin'><svg class='icn-svg col-version'>
+                                            <use xlink:href='#ic-loader'></use>
+                                        </svg></div>
+                                </div>
+                                <div class='scroll filter' id='list-year'>
+                                    <div class='boxline'></div>
+                                    <div class='boxinfo'></div>
+                                    <div class='spinner-box spin'><svg class='icn-svg col-version'>
+                                            <use xlink:href='#ic-loader'></use>
+                                        </svg></div>
+                                </div>
+                                <div class='scroll search' id='list-search'>
+                                    <div class='boxline'></div>
+                                    <div class='boxinfo'></div>
+                                    <div class='spinner-box spin'><svg class='icn-svg col-version'>
+                                            <use xlink:href='#ic-loader'></use>
+                                        </svg></div>
+                                </div>
+                            </div>
+                            <div class='boxfilter' id='searchbox'>
+                                <div class='tab-filter'>
+                                    <div class='bt-mini color' id='bt-name'>
+                                        <div class='txt'>DJ name</div>
+                                        <div class='hitzone'></div>
+                                    </div>
+                                    <div class='bt-mini color' id='bt-title'>
+                                        <div class='txt'>Mix title</div>
+                                        <div class='hitzone'></div>
+                                    </div>
+                                    <div class='bt-mini color' id='bt-dedi'>
+                                        <div class='txt'>Dedicated to</div>
+                                        <div class='hitzone'></div>
+                                    </div>
+                                </div>
+                                <form action='javascript:clickBtSearch()' method='post' target='_self'>
+                                    <div class='formline'><input type='text' id='input-search' name='input-search'
+                                            placeholder='Search for a mix' value='' maxlength='26' autocomplete='off'
+                                            autocorrect='off' spellcheck='false'></div>
+                                    <div class='bt search' id='bt-search'>
+                                        <div class='bck'><svg class='icn-svg'>
+                                                <use xlink:href='#ic-search'></use>
+                                            </svg></div>
+                                        <div class='hitzone'></div>
+                                    </div><input type='submit' style='visibility:hidden;position:absolute'>
+                                </form>
+                            </div>
+                            <div class='boxfilter' id='top50box'>
+                                <div class='tab-filter'>
+                                    <div class='bt-mini color' id='bt-day'>
+                                        <div class='txt'>Day</div>
+                                        <div class='hitzone'></div>
+                                    </div>
+                                    <div class='bt-mini color' id='bt-week'>
+                                        <div class='txt'>Week</div>
+                                        <div class='hitzone'></div>
+                                    </div>
+                                    <div class='bt-mini color' id='bt-month'>
+                                        <div class='txt'>Month</div>
+                                        <div class='hitzone'></div>
+                                    </div>
+                                    <div class='bt-mini color' id='bt-year'>
+                                        <div class='txt'>Year</div>
+                                        <div class='hitzone'></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='boxfilter' id='mixlistbox'>
+                                <div class='tab-filter'>
+                                    <div class='bt-mini color' id='bt-mymix'>
+                                        <div class='icn-box'><svg class='icn-svg'>
+                                                <use xlink:href='#ic-user-mini'></use>
+                                            </svg></div>
+                                        <div class='txt'>My mix</div>
+                                        <div class='hitzone'></div>
+                                        <div class='notif'></div>
+                                    </div>
+                                    <div class='bt-mini color' id='bt-myfav'>
+                                        <div class='icn-box'><svg class='icn-svg'>
+                                                <use xlink:href='#ic-rate-mini'></use>
+                                            </svg></div>
+                                        <div class='txt'>My Fav</div>
+                                        <div class='hitzone'></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class='box-popup' id='pop-switch'>
                     <div class='bac'></div>
@@ -341,6 +482,53 @@
                                                 <div class='hitzone'></div>
                                             </div>
                                         </div>
+                                        <hr>
+                                        <div class='paramline' id='param-safe'><span class='label'>Safe mode (parental
+                                                control)</span> <span class='ic-info'><svg class='icn-svg'>
+                                                    <use xlink:href='#ic-help'></use>
+                                                </svg>
+                                                <div class='hitzone'></div>
+                                            </span>
+                                            <div class='bt-mini bt-onoff hoverLocked'>
+                                                <div class='slider'></div>
+                                                <div class='ic-locked'><svg class='icn-svg'>
+                                                        <use xlink:href='#ic-lock'></use>
+                                                    </svg></div>
+                                                <div class='hitzone'></div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class='paramline' id='param-reset'><span class='label'>Reset bonuses
+                                                progression</span> <span class='ic-info'><svg class='icn-svg'>
+                                                    <use xlink:href='#ic-help'></use>
+                                                </svg>
+                                                <div class='hitzone'></div>
+                                            </span>
+                                            <div class='bt-mini light hoverLocked'>
+                                                <div class='txt'>Reset</div>
+                                                <div class='ic-locked'><svg class='icn-svg'>
+                                                        <use xlink:href='#ic-lock'></use>
+                                                    </svg></div>
+                                                <div class='hitzone'></div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class='paramline' id='param-recover'><span class='label'>Recover all
+                                                mixes</span> <span class='ic-info'><svg class='icn-svg'>
+                                                    <use xlink:href='#ic-help'></use>
+                                                </svg>
+                                                <div class='hitzone'></div>
+                                            </span>
+                                            <div class='bt-mini light hoverLocked'>
+                                                <div class='txt'>Recover</div>
+                                                <div class='ic-locked'><svg class='icn-svg'>
+                                                        <use xlink:href='#ic-lock'></use>
+                                                    </svg></div>
+                                                <div class='hitzone'></div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class='text mini'>Version 0.5.4</div>
                                     </div>
                                 </div>
                             </div>
@@ -867,8 +1055,6 @@
                 </symbol>
             </defs>
         </svg>
-            </div>
     </body>
-</body>
-
+    </body>
 </html>
