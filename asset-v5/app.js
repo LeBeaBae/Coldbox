@@ -17,7 +17,7 @@ var app = new function() {
         color: "FAB405",
         uniqsnd: !0
     }, {
-        name: "5_hammer",
+        name: "5_snare",
         color: "FAB405",
         uniqsnd: !0
     }, {
@@ -58,6 +58,26 @@ var app = new function() {
         uniqsnd: !0
     }, {
         name: "15_whistle",
+        color: "64B92D",
+        uniqsnd: !0
+    }, {
+        name: "16_mechanic",
+        color: "64B92D",
+        uniqsnd: !0
+    }, {
+        name: "17_struck",
+        color: "64B92D",
+        uniqsnd: !0
+    }, {
+        name: "18_woah",
+        color: "64B92D",
+        uniqsnd: !0
+    }, {
+        name: "19_hum",
+        color: "64B92D",
+        uniqsnd: !0
+    }, {
+        name: "20_doot",
         color: "64B92D",
         uniqsnd: !0
     }], this.bonusarray = [], this.unlockerarray = [];
