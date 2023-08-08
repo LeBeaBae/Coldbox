@@ -13,7 +13,7 @@ var app = new function() {
         color: "FAB405",
         uniqsnd: !0
     }, {
-        name: "4_cluck",
+        name: "4_hammer",
         color: "FAB405",
         uniqsnd: !0
     }, {
