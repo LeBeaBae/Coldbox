@@ -53,11 +53,11 @@ var app = new function() {
         color: "64B92D",
         uniqsnd: !0
     }, {
-        name: "14_soon",
+        name: "14_arpeg",
         color: "64B92D",
         uniqsnd: !0
     }, {
-        name: "15_whistle",
+        name: "15_tunbum",
         color: "64B92D",
         uniqsnd: !0
     }, {
